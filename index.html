@@ -6,7 +6,7 @@
   <title>David Eiler — AI Portfolio</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="David Eiler — 17-jähriger KI-Enthusiast aus Deutschland, jetzt in Thailand. Anthropic-zertifiziert, auf dem Weg zur eigenen KI-Firma mit 18." />
+  <meta name="description" content="David Eiler — 17-jähriger KI-Enthusiast aus Österreich, jetzt in Thailand. Anthropic-zertifiziert, auf dem Weg zur eigenen KI-Firma mit 18." />
   <meta name="keywords" content="David Eiler, KI, Künstliche Intelligenz, Anthropic, Claude, Portfolio, Thailand, Prompt Engineering, AI Startup" />
   <meta name="author" content="David Eiler" />
   <meta name="robots" content="index, follow" />
@@ -269,33 +269,15 @@
     #about { background: var(--bg2); }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    /* SVG avatar placeholder */
-    .avatar-wrap {
-      position: relative;
-    }
-
-    .avatar-wrap::after {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border-radius: calc(var(--radius) + 8px);
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      z-index: -1;
-      opacity: 0.4;
-      filter: blur(12px);
-    }
-
-    .avatar-svg {
-      width: 100%; border-radius: var(--radius);
       display: block;
-      background: var(--surface);
-      border: 1px solid var(--border);
+    }
+
+    #about .section-title {
+      margin-bottom: 2.5rem;
+    }
+
+    .about-text {
+      max-width: 720px;
     }
 
     .about-text p {
@@ -382,6 +364,36 @@
     .cert-green .cert-tag { background: rgba(232,240,230,0.15); color: #e8f0e6; }
     .cert-green .cert-id { color: rgba(232,240,230,0.5); }
 
+    /* blue card */
+    .cert-blue {
+      background: #6b9fd4;
+      color: #0d1f35;
+    }
+    .cert-blue .cert-issuer { color: rgba(13,31,53,0.55); }
+    .cert-blue .cert-badge-icon { background: rgba(13,31,53,0.1); color: #0d1f35; }
+    .cert-blue .cert-tag { background: rgba(13,31,53,0.1); color: #0d1f35; }
+    .cert-blue .cert-id { color: rgba(13,31,53,0.45); }
+
+    /* lavender card */
+    .cert-lavender {
+      background: #c5c8e0;
+      color: #1a1a2e;
+    }
+    .cert-lavender .cert-issuer { color: rgba(26,26,46,0.55); }
+    .cert-lavender .cert-badge-icon { background: rgba(26,26,46,0.1); color: #1a1a2e; }
+    .cert-lavender .cert-tag { background: rgba(26,26,46,0.1); color: #1a1a2e; }
+    .cert-lavender .cert-id { color: rgba(26,26,46,0.45); }
+
+    /* mint card */
+    .cert-mint {
+      background: #8fbfb8;
+      color: #0f2b28;
+    }
+    .cert-mint .cert-issuer { color: rgba(15,43,40,0.55); }
+    .cert-mint .cert-badge-icon { background: rgba(15,43,40,0.1); color: #0f2b28; }
+    .cert-mint .cert-tag { background: rgba(15,43,40,0.1); color: #0f2b28; }
+    .cert-mint .cert-id { color: rgba(15,43,40,0.45); }
+
     .cert-top {
       display: flex; align-items: center; gap: 0.75rem;
       margin-bottom: 1.5rem;
@@ -438,6 +450,28 @@
       opacity: 0.4;
       display: flex; align-items: center; justify-content: center;
       font-size: 0.75rem;
+    }
+
+    .cert-hidden { display: none; }
+
+    .certs-toggle-btn {
+      display: block;
+      margin: 2rem auto 1rem;
+      padding: 0.85rem 2.5rem;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-family: var(--font-body);
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.3);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.18s;
+      letter-spacing: 0.06em;
+    }
+    .certs-toggle-btn:hover {
+      background: rgba(56,189,248,0.07);
+      border-color: var(--accent);
+      transform: translateY(-2px);
     }
 
     .certs-note {
@@ -854,6 +888,52 @@
     }
     #chat-send:hover { transform: scale(1.08); box-shadow: 0 0 12px rgba(56,189,248,0.4); }
 
+    /* ── IMPRESSUM ──────────────────────────────────── */
+    #impressum { background: var(--bg2); }
+
+    #impressum .section-title { margin-bottom: 2.5rem; }
+
+    .impressum-box {
+      max-width: 680px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+
+    .impressum-block { margin-bottom: 2rem; }
+    .impressum-block:last-child { margin-bottom: 0; }
+
+    .impressum-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.5rem;
+    }
+
+    .impressum-block p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .impressum-block a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .impressum-block a:hover { text-decoration: underline; }
+
+    .impressum-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* ── FOOTER ─────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
@@ -866,6 +946,13 @@
     }
 
     footer span { color: var(--accent); }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--accent); }
 
     /* ── ANIMATIONS ─────────────────────────────────── */
     @keyframes fadeUp {
@@ -895,10 +982,7 @@
       .nav-links { gap: 1.2rem; }
       .nav-links a { font-size: 0.78rem; }
 
-      .about-grid { grid-template-columns: 1fr; }
-      .avatar-wrap { width: 160px; margin: 0 auto; }
-
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+.contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
       .about-stats { gap: 1.5rem; }
 
@@ -1049,6 +1133,7 @@
       <li><a href="#certs" onclick="closeMenu()">Zertifikate</a></li>
       <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
       <li><a href="#contact" onclick="closeMenu()">Kontakt</a></li>
+      <li><a href="#impressum" onclick="closeMenu()">Impressum</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menü" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -1086,87 +1171,20 @@
       <h2 class="section-title reveal">Wer ich bin</h2>
 
       <div class="about-grid">
-        <div class="avatar-wrap reveal">
-          <!-- SVG Tech Avatar Placeholder -->
-          <svg class="avatar-svg" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="240" height="280" fill="#111827"/>
-            <!-- circuit lines background -->
-            <line x1="0" y1="60" x2="80" y2="60" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.25"/>
-            <line x1="160" y1="60" x2="240" y2="60" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.25"/>
-            <line x1="0" y1="220" x2="70" y2="220" stroke="#818cf8" stroke-width="0.5" stroke-opacity="0.25"/>
-            <line x1="170" y1="220" x2="240" y2="220" stroke="#818cf8" stroke-width="0.5" stroke-opacity="0.25"/>
-            <line x1="40" y1="0" x2="40" y2="90" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
-            <line x1="200" y1="0" x2="200" y2="80" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.2"/>
-            <line x1="40" y1="190" x2="40" y2="280" stroke="#818cf8" stroke-width="0.5" stroke-opacity="0.2"/>
-            <!-- circuit nodes -->
-            <circle cx="40" cy="60" r="3" fill="#38bdf8" fill-opacity="0.4"/>
-            <circle cx="200" cy="60" r="3" fill="#38bdf8" fill-opacity="0.4"/>
-            <circle cx="40" cy="220" r="3" fill="#818cf8" fill-opacity="0.4"/>
-            <!-- person silhouette head -->
-            <circle cx="120" cy="105" r="44" fill="#1e293b"/>
-            <circle cx="120" cy="105" r="44" fill="url(#headGrad)"/>
-            <!-- face details -->
-            <ellipse cx="108" cy="100" rx="5" ry="6" fill="#38bdf8" fill-opacity="0.8"/>
-            <ellipse cx="132" cy="100" rx="5" ry="6" fill="#38bdf8" fill-opacity="0.8"/>
-            <path d="M112 116 Q120 122 128 116" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity="0.7"/>
-            <!-- HUD ring -->
-            <circle cx="120" cy="105" r="54" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-            <!-- body -->
-            <path d="M60 220 Q60 165 120 165 Q180 165 180 220 L180 280 L60 280 Z" fill="#1e293b"/>
-            <path d="M60 220 Q60 165 120 165 Q180 165 180 220 L180 280 L60 280 Z" fill="url(#bodyGrad)"/>
-            <!-- collar detail -->
-            <path d="M100 165 L120 185 L140 165" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-opacity="0.5"/>
-            <!-- text overlay -->
-            <text x="120" y="258" font-family="Courier New" font-size="8" fill="#38bdf8" fill-opacity="0.5" text-anchor="middle" letter-spacing="3">DAVID EILER</text>
-            <defs>
-              <radialGradient id="headGrad" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#334155"/>
-                <stop offset="100%" stop-color="#1e293b"/>
-              </radialGradient>
-              <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#334155"/>
-                <stop offset="100%" stop-color="#0f172a"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-
         <div class="about-text">
           <p class="reveal reveal-delay-1">
-            Hallo, ich bin <strong>David Eiler</strong> &mdash; 17 Jahre alt, aus Deutschland ausgewandert
-            und lebe jetzt hauptsächlich in <strong>Thailand</strong>. Seit meiner frühen Jugend
-            fasziniert mich künstliche Intelligenz &mdash; während andere Netflix schauen, eigne ich mir
-            KI-Kompetenzen an und baue auf Zertifikate renommierter Unternehmen.
+            Hallo &ndash; ich bin <strong>David Eiler</strong>, 17 Jahre alt, aus <strong>Österreich</strong> ausgewandert und lebe in <strong>Thailand</strong>. Seit einigen Monaten beschäftige ich mich intensiv mit KI &ndash; und habe seitdem nicht mehr aufgehört.
           </p>
           <p class="reveal reveal-delay-2">
-            Mein Ziel ist klar: Mit <strong>18 Jahren</strong> gründe ich meine erste eigene Firma
-            im KI-Sektor. Thailand bietet mir dabei die perfekte Umgebung &mdash; jung, dynamisch
-            und voller Möglichkeiten.
+            Aktuell halte ich <strong>16 offizielle Zertifikate von Anthropic</strong> &ndash; von Claude Grundlagen bis hin zu Agenten, MCP und AI Fluency.
           </p>
           <p class="reveal reveal-delay-3">
-            Aktuell halte ich <strong>2 offizielle Zertifikate</strong> von Anthropic und arbeite
-            aktiv an weiteren. Jede neue Qualifikation bringt mich einem Schritt näher an
-            meinen Traum heran.
+            Parallel dazu mache ich aktuell mein <strong>Abitur</strong> &ndash; beides gleichzeitig ist nicht immer leicht, aber genau das treibt mich an. Jeden Tag lerne ich dazu, entwickle mich weiter und komme meinem Ziel einen Schritt näher.
+          </p>
+          <p class="reveal reveal-delay-4">
+            Mein Ziel ist klar: Mit <strong>18 Jahren</strong> gründe ich meine erste Firma im KI-Sektor. Thailand ist dabei kein Zufall &ndash; jung, dynamisch, voller Möglichkeiten.
           </p>
 
-          <div class="about-stats reveal reveal-delay-4">
-            <div class="stat">
-              <span class="stat-value" id="stat-certs" data-target="2">0</span>
-              <span class="stat-label">Zertifikate</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value" id="stat-age" data-target="17">0</span>
-              <span class="stat-label">Jahre alt</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">TH</span>
-              <span class="stat-label">Thailand</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value" id="thai-clock" style="font-size:1.4rem;">--:--</span>
-              <span class="stat-label">Lokalzeit (ICT)</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1179,6 +1197,7 @@
       <h2 class="section-title reveal">Meine Zertifikate</h2>
 
       <div class="certs-grid">
+
         <!-- Claude 101 -->
         <div class="cert-card cert-beige reveal reveal-delay-1">
           <div class="cert-check">&#10003;</div>
@@ -1193,11 +1212,28 @@
             <span class="cert-tag">Claude AI</span>
             <span class="cert-tag">Prompt Basics</span>
           </div>
-          <div class="cert-id">Ausgestellt durch Anthropic &#183; skilljar.com</div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- Claude Code 101 -->
+        <div class="cert-card cert-green reveal reveal-delay-2">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#11835;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Claude Code 101</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Claude Code</span>
+            <span class="cert-tag">Grundlagen</span>
+            <span class="cert-tag">Entwicklung</span>
+          </div>
+          <div class="cert-id">Ausgestellt: 8. Mai 2026</div>
         </div>
 
         <!-- Claude Code in Action -->
-        <div class="cert-card cert-green reveal reveal-delay-2">
+        <div class="cert-card cert-green reveal reveal-delay-3">
           <div class="cert-check">&#10003;</div>
           <div class="cert-top">
             <div class="cert-badge-icon">&#11835;</div>
@@ -1213,10 +1249,235 @@
           <div class="cert-id">Ausgestellt: 18. März 2026 &nbsp;&#183;&nbsp; Nr: 3qbvouj3wpua</div>
         </div>
 
+        <!-- Claude with the Anthropic API -->
+        <div class="cert-card cert-blue reveal reveal-delay-4">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#128196;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Claude with the Anthropic API</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">API</span>
+            <span class="cert-tag">Integration</span>
+            <span class="cert-tag">Entwicklung</span>
+          </div>
+          <div class="cert-id">Nr: a8uuzrr7ujgm</div>
+        </div>
+
+        <!-- Claude with Amazon Bedrock -->
+        <div class="cert-card cert-green reveal reveal-delay-1">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#9729;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Claude with Amazon Bedrock</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Amazon AWS</span>
+            <span class="cert-tag">Cloud AI</span>
+            <span class="cert-tag">Bedrock</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- Introduction to Claude Cowork -->
+        <div class="cert-card cert-lavender reveal reveal-delay-2">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#9670;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Introduction to Claude Cowork</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Claude</span>
+            <span class="cert-tag">Teamarbeit</span>
+            <span class="cert-tag">Kollaboration</span>
+          </div>
+          <div class="cert-id">Ausgestellt: 8. Mai 2026</div>
+        </div>
+
+        <!-- Introduction to agent skills -->
+        <div class="cert-card cert-blue reveal reveal-delay-3">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#129504;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Introduction to agent skills</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Agenten</span>
+            <span class="cert-tag">AI Skills</span>
+            <span class="cert-tag">Automatisierung</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- Introduction to subagents -->
+        <div class="cert-card cert-mint reveal reveal-delay-4">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#9670;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Introduction to subagents</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Subagenten</span>
+            <span class="cert-tag">Agenten</span>
+            <span class="cert-tag">Orchestrierung</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- Introduction to Model Context Protocol -->
+        <div class="cert-card cert-mint reveal reveal-delay-1">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#8853;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Introduction to Model Context Protocol</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">MCP</span>
+            <span class="cert-tag">Protokoll</span>
+            <span class="cert-tag">Tools</span>
+          </div>
+          <div class="cert-id">Nr: n2dmye97oxbe</div>
+        </div>
+
+        <!-- Model Context Protocol: Advanced Topics -->
+        <div class="cert-card cert-lavender reveal reveal-delay-2">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#8853;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Model Context Protocol: Advanced Topics</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">MCP Advanced</span>
+            <span class="cert-tag">Protokoll</span>
+            <span class="cert-tag">Experte</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- AI Fluency: Framework & Foundations -->
+        <div class="cert-card cert-green reveal reveal-delay-3">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#127891;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">AI Fluency: Framework &amp; Foundations</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">AI Grundlagen</span>
+            <span class="cert-tag">Framework</span>
+            <span class="cert-tag">Bildung</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; UCC &amp; Partner</div>
+        </div>
+
+        <!-- AI Fluency: AI Capabilities & Limitations -->
+        <div class="cert-card cert-lavender reveal reveal-delay-4">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#127891;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">AI Fluency: AI Capabilities &amp; Limitations</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">KI F&auml;higkeiten</span>
+            <span class="cert-tag">Grenzen</span>
+            <span class="cert-tag">Analyse</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; skilljar.com</div>
+        </div>
+
+        <!-- AI Fluency for students -->
+        <div class="cert-card cert-lavender reveal reveal-delay-1">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#127891;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">AI Fluency for students</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Bildung</span>
+            <span class="cert-tag">Studierende</span>
+            <span class="cert-tag">AI</span>
+          </div>
+          <div class="cert-id">Ausgestellt: 26. Mai 2026 &nbsp;&#183;&nbsp; UCC &amp; Partner</div>
+        </div>
+
+        <!-- AI Fluency for educators -->
+        <div class="cert-card cert-mint reveal reveal-delay-2">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#128218;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">AI Fluency for educators</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">P&auml;dagogik</span>
+            <span class="cert-tag">Lehrende</span>
+            <span class="cert-tag">AI</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; UCC &amp; Partner</div>
+        </div>
+
+        <!-- AI Fluency for nonprofits -->
+        <div class="cert-card cert-mint reveal reveal-delay-3">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#127891;</div>
+            <div class="cert-issuer">Anthropic &amp; GivingTuesday</div>
+          </div>
+          <div class="cert-title">AI Fluency for nonprofits</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">NGO</span>
+            <span class="cert-tag">Nonprofits</span>
+            <span class="cert-tag">AI</span>
+          </div>
+          <div class="cert-id">Anthropic &amp; GivingTuesday</div>
+        </div>
+
+        <!-- Teaching the AI Fluency Framework -->
+        <div class="cert-card cert-blue reveal reveal-delay-4">
+          <div class="cert-check">&#10003;</div>
+          <div class="cert-top">
+            <div class="cert-badge-icon">&#128218;</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-title">Teaching the AI Fluency Framework</div>
+          <div class="cert-subtitle">Certificate of Completion</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Unterrichten</span>
+            <span class="cert-tag">AI Framework</span>
+            <span class="cert-tag">P&auml;dagogik</span>
+          </div>
+          <div class="cert-id">Ausgestellt durch Anthropic &nbsp;&#183;&nbsp; UCC &amp; Partner</div>
+        </div>
+
       </div>
 
+      <button id="certsToggleBtn" class="certs-toggle-btn reveal">
+        &#9660; Alle 16 Zertifikate anzeigen
+      </button>
+
       <div class="certs-note reveal">
-        &#9680; Weitere Zertifikate in Bearbeitung &mdash; Neue Qualifikationen folgen in Kürze.
+        &#9670; 16 offizielle Anthropic-Zertifikate &mdash; von Claude Grundlagen bis MCP Advanced &amp; AI Fluency.
       </div>
     </div>
   </section>
@@ -1276,9 +1537,9 @@
               <span class="social-icon">&#9993;</span>
               davideiler321@gmail.com
             </a>
-            <a href="#" class="social-link">
+            <a href="https://www.linkedin.com/in/david-eiler-68b6203b9/" target="_blank" class="social-link">
               <span class="social-icon">&#128279;</span>
-              LinkedIn &mdash; kommt bald
+              linkedin.com/in/david-eiler
             </a>
             <a href="https://github.com/twi134" target="_blank" class="social-link">
               <span class="social-icon">&#128037;</span>
@@ -1350,9 +1611,37 @@
 
   </div>
 
+  <!-- IMPRESSUM -->
+  <section id="impressum">
+    <div class="section-inner">
+      <div class="section-label">// 05 &mdash; Rechtliches</div>
+      <h2 class="section-title reveal">Impressum</h2>
+
+      <div class="impressum-box reveal">
+
+        <div class="impressum-block">
+          <div class="impressum-label">Verantwortlich</div>
+          <p>
+            <strong style="color:var(--text)">David Eiler</strong><br>
+            1508 Petchkasem<br>
+            76120 Petchaburi, Thailand
+          </p>
+        </div>
+
+        <div class="impressum-block" style="margin-bottom:0">
+          <div class="impressum-label">Kontakt</div>
+          <p>
+            <a href="mailto:davideiler321@gmail.com">davideiler321@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    &copy; 2026 <span>David Eiler</span> &mdash; gebaut mit Leidenschaft &amp; KI &nbsp;&#9670;&nbsp; Alle Rechte vorbehalten.
+    &copy; 2026 <span>David Eiler</span> &mdash; gebaut mit Leidenschaft &amp; KI &nbsp;&#9670;&nbsp; <a href="#impressum">Impressum</a>
   </footer>
 
   <script>
@@ -1450,92 +1739,9 @@
     const introBubble = document.getElementById('chat-intro-bubble');
     const quickBtns   = document.getElementById('quickBtns');
     let chatOpened    = false;
+    let chatHistory   = [];
 
-    // Hide intro bubble after 6s
     setTimeout(() => introBubble.classList.add('hide'), 6000);
-
-    const botKnowledge = [
-      {
-        keys: ['wer', 'david', 'über', 'info', 'vorstellung', 'du'],
-        reply: 'David Eiler ist 17 Jahre alt und leidenschaftlicher KI-Enthusiast. Sein großes Ziel: mit 18 Jahren seine erste eigene KI-Firma zu gründen. 🚀'
-      },
-      {
-        keys: ['zertifikat', 'cert', 'abschluss', 'qualifikation', 'nachweis'],
-        reply: 'David hat aktuell 2 offizielle Anthropic-Zertifikate:\n• Claude 101 – Grundlagen & Prompt Basics\n• Claude Code in Action – KI-gestützte Softwareentwicklung\nWeitere sind in Bearbeitung! 📜'
-      },
-      {
-        keys: ['skill', 'kann', 'fähigkeit', 'kenntnisse', 'können'],
-        reply: 'Davids Hauptskills:\n🧠 AI / Prompt Engineering (82%)\n📄 Claude API (65%)\n💻 Claude Code (72%)\n🚀 KI-Entrepreneurship (55%)'
-      },
-      {
-        keys: ['kontakt', 'contact', 'email', 'mail', 'schreiben', 'erreichen', 'github'],
-        reply: 'Du erreichst David so:\n📧 davideiler321@gmail.com\n🐙 github.com/twi134\n\nOder direkt über das Kontaktformular auf dieser Seite!'
-      },
-      {
-        keys: ['alter', 'alt', 'jahre', 'jung'],
-        reply: 'David ist 17 Jahre alt und gehört damit zu den jüngsten KI-Enthusiasten mit offiziellen Anthropic-Zertifikaten! 💪'
-      },
-      {
-        keys: ['firma', 'gründen', 'startup', 'unternehmen', 'vision', 'traum', 'ziel'],
-        reply: 'Davids Vision ist es, mit 18 Jahren seine erste KI-Firma zu gründen. In welchem genauen Bereich entscheidet er basierend auf seinen wachsenden Kenntnissen und den Chancen, die sich bieten. 🎯'
-      },
-      {
-        keys: ['anthropic', 'claude', 'ki', 'artificial', 'intelligence'],
-        reply: 'David arbeitet intensiv mit Anthropic\'s Claude – sowohl mit der API als auch mit Claude Code. Er ist zertifiziert in Claude 101 und Claude Code in Action! 🤖'
-      },
-      {
-        keys: ['thailand', 'thai', 'auswander', 'wohnt', 'lebt', 'wo', 'land', 'ausland', 'asien'],
-        reply: 'David ist aus Deutschland ausgewandert und lebt jetzt hauptsächlich in 🇹🇭 Thailand! Er ist von der dynamischen Atmosphäre dort begeistert und sieht es als perfekte Basis für seine KI-Pläne.'
-      },
-      {
-        keys: ['zeit', 'uhr', 'uhrzeit', 'zeitzone', 'zeitverschiebung', 'verfügbar', 'erreichbar', 'wann', 'schlafen', 'antwort'],
-        reply: () => {
-          const now = new Date();
-          const thaiTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' }));
-          const deTime   = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
-          const thaiH = thaiTime.getHours();
-          const thaiStr = thaiTime.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
-          const deStr   = deTime.toLocaleTimeString('de-DE',   { hour: '2-digit', minute: '2-digit' });
-          const diff = Math.round((thaiTime - deTime) / 3600000);
-          let status = '';
-          if (thaiH >= 22 || thaiH < 7)       status = '🌙 David schläft wahrscheinlich gerade.';
-          else if (thaiH >= 7 && thaiH < 12)   status = '☀️ David ist wahrscheinlich wach und aktiv!';
-          else if (thaiH >= 12 && thaiH < 18)  status = '💻 David arbeitet wahrscheinlich gerade.';
-          else                                  status = '🌆 David ist wahrscheinlich noch wach.';
-          return `Thailand (ICT): ${thaiStr} 🇹🇭\nDeutschland: ${deStr} 🇩🇪\nZeitverschiebung: +${diff}h\n\n${status}\n\nBei Nachrichten also bitte Geduld — er antwortet aus Thailand!`;
-        }
-      },
-      {
-        keys: ['deutschland', 'deutsch', 'germany', 'heimat', 'herkunft'],
-        reply: 'David kommt ursprünglich aus Deutschland 🇩🇪, ist aber ausgewandert und lebt jetzt hauptsächlich in Thailand. Die Zeitverschiebung beträgt je nach Jahreszeit +5 oder +6 Stunden gegenüber Deutschland.'
-      },
-      {
-        keys: ['hallo', 'hi', 'hey', 'guten', 'servus', 'moin'],
-        reply: () => {
-          const now = new Date();
-          const thaiTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' }));
-          const h = thaiTime.getHours();
-          const greeting = h < 12 ? 'Guten Morgen' : h < 18 ? 'Guten Tag' : 'Guten Abend';
-          return `${greeting}! 👋 Ich bin Davids KI-Assistent – direkt aus Thailand. Ich beantworte dir Fragen über David, seine Zertifikate, Skills, Zeitzone oder wie du ihn kontaktieren kannst!`;
-        }
-      },
-    ];
-
-    const fallbacks = [
-      'Das weiß ich leider nicht genau – schreib David direkt unter davideiler321@gmail.com! 📧',
-      'Für diese Frage bin ich nicht ausgerüstet. Schau dir die Seite an oder kontaktiere David direkt!',
-      'Gute Frage! David kann dir das am besten selbst beantworten – einfach Kontakt aufnehmen. 😊',
-    ];
-
-    function getBotReply(text) {
-      const lower = text.toLowerCase();
-      for (const entry of botKnowledge) {
-        if (entry.keys.some(k => lower.includes(k))) {
-          return typeof entry.reply === 'function' ? entry.reply() : entry.reply;
-        }
-      }
-      return fallbacks[Math.floor(Math.random() * fallbacks.length)];
-    }
 
     function addMsg(text, role) {
       const wrap = document.createElement('div');
@@ -1563,15 +1769,29 @@
       if (t) t.remove();
     }
 
-    function sendMessage(text) {
+    async function sendMessage(text) {
       if (!text.trim()) return;
       addMsg(text, 'user');
       quickBtns.style.display = 'none';
       addTyping();
-      setTimeout(() => {
+
+      try {
+        const res = await fetch('/.netlify/functions/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: chatHistory })
+        });
+        const data = await res.json();
         removeTyping();
-        addMsg(getBotReply(text), 'bot');
-      }, 700 + Math.random() * 400);
+        const reply = data.reply || 'Tut mir leid, da ist etwas schiefgelaufen.';
+        addMsg(reply, 'bot');
+        chatHistory.push({ role: 'user', content: text });
+        chatHistory.push({ role: 'assistant', content: reply });
+        if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10);
+      } catch {
+        removeTyping();
+        addMsg('Verbindungsfehler. Bitte versuche es nochmal.', 'bot');
+      }
     }
 
     function handleSend() {
@@ -1613,48 +1833,37 @@
       setTimeout(() => loader.classList.add('hidden'), 1400);
     });
 
-// ── Zählanimation Stats ───────────────────────────────────
-    function animateCount(el) {
-      const target = parseInt(el.dataset.target);
-      const duration = 1200;
-      const step = 16;
-      const steps = duration / step;
-      let current = 0;
-      const inc = target / steps;
-      const timer = setInterval(() => {
-        current = Math.min(current + inc, target);
-        el.textContent = Math.floor(current);
-        if (current >= target) clearInterval(timer);
-      }, step);
-    }
-
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateCount(e.target);
-          statObserver.unobserve(e.target);
+// ── Certificates toggle ───────────────────────────────────
+    (function() {
+      const cards = Array.from(document.querySelectorAll('#certs .cert-card'));
+      const btn = document.getElementById('certsToggleBtn');
+      if (!btn || cards.length <= 3) return;
+      let expanded = false;
+      cards.forEach((c, i) => { if (i >= 3) c.classList.add('cert-hidden'); });
+      btn.addEventListener('click', function() {
+        expanded = !expanded;
+        cards.forEach((c, i) => {
+          if (i < 3) return;
+          if (expanded) {
+            c.classList.remove('cert-hidden');
+            setTimeout(() => c.classList.add('visible'), (i - 3) * 50);
+          } else {
+            c.classList.remove('visible');
+            c.classList.add('cert-hidden');
+          }
+        });
+        btn.innerHTML = expanded
+          ? '&#9650; Weniger anzeigen'
+          : '&#9660; Alle 16 Zertifikate anzeigen';
+        if (!expanded) {
+          document.getElementById('certs').scrollIntoView({ behavior: 'smooth' });
         }
       });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
-
-    // ── Thailand Live Clock ───────────────────────────────────
-    function updateThaiClock() {
-      const clock = document.getElementById('thai-clock');
-      if (!clock) return;
-      const now = new Date();
-      clock.textContent = now.toLocaleTimeString('de-DE', {
-        timeZone: 'Asia/Bangkok',
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
-      });
-    }
-    updateThaiClock();
-    setInterval(updateThaiClock, 1000);
+    })();
 
     // ── Typing animation in hero ──────────────────────────────
     const heroSub = document.getElementById('heroSub');
-    const fullText = '17 Jahre alt. Lebe in Thailand. Während andere Netflix schauen, baue ich auf KI-Zertifikate renommierter Unternehmen \u2013 mit einem klaren Ziel: eigene Firma mit 18.';
+    const fullText = 'KI-Enthusiast aus Österreich, aktuell im Abitur — mit einem klaren Ziel: eigene Firma mit 18.';
     let idx = 0;
 
     const cursor = document.createElement('span');
